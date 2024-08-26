@@ -315,16 +315,16 @@ WHILE(${DRIVER_INDEX} LESS ${DRIVERS_COUNT})
   # TODO - Need proper pathing / remove hardcoding
 
   # TODO - Test Exported IAM Auth
-  TARGET_INCLUDE_DIRECTORIES(${DRIVER_NAME} PRIVATE "C:/Users/yuenhcol/Code/aws-iam-proxy")
-  TARGET_LINK_LIBRARIES(${DRIVER_NAME} "C:/Users/yuenhcol/Code/aws-iam-proxy/build/Release/aws-odbc-iam-proxy.lib")
-  TARGET_INCLUDE_DIRECTORIES(${DRIVER_NAME_STATIC} PRIVATE "C:/Users/yuenhcol/Code/aws-iam-proxy")
-  TARGET_LINK_LIBRARIES(${DRIVER_NAME_STATIC} "C:/Users/yuenhcol/Code/aws-iam-proxy/build/Release/aws-odbc-iam-proxy.lib")
+  TARGET_INCLUDE_DIRECTORIES(${DRIVER_NAME} PRIVATE "${AWS_IAM_PROXY_DIR}")
+  TARGET_LINK_LIBRARIES(${DRIVER_NAME} "${AWS_IAM_PROXY_DIR}/build/Release/aws-odbc-iam-proxy.lib")
+  TARGET_INCLUDE_DIRECTORIES(${DRIVER_NAME_STATIC} PRIVATE "${AWS_IAM_PROXY_DIR}")
+  TARGET_LINK_LIBRARIES(${DRIVER_NAME_STATIC} "${AWS_IAM_PROXY_DIR}/build/Release/aws-odbc-iam-proxy.lib")
 
   # TODO - Test Exported Failover
-  TARGET_INCLUDE_DIRECTORIES(${DRIVER_NAME} PRIVATE "C:/Users/yuenhcol/Documents/Code/aws-odbc-failover")
-  TARGET_LINK_LIBRARIES(${DRIVER_NAME} "C:/Users/yuenhcol/Documents/Code/aws-odbc-failover/build/Release/aws-odbc-failover-export.lib")
-  TARGET_INCLUDE_DIRECTORIES(${DRIVER_NAME_STATIC} PRIVATE "C:/Users/yuenhcol/Documents/Code/aws-odbc-failover")
-  TARGET_LINK_LIBRARIES(${DRIVER_NAME_STATIC} "C:/Users/yuenhcol/Documents/Code/aws-odbc-failover/build/Release/aws-odbc-failover-export.lib")
+  TARGET_INCLUDE_DIRECTORIES(${DRIVER_NAME} PRIVATE "${AWS_ODBC_FAILOVER_DIR}")
+  TARGET_LINK_LIBRARIES(${DRIVER_NAME} "${AWS_ODBC_FAILOVER_DIR}/build/Release/aws-odbc-failover-export.lib")
+  TARGET_INCLUDE_DIRECTORIES(${DRIVER_NAME_STATIC} PRIVATE "${AWS_ODBC_FAILOVER_DIR}")
+  TARGET_LINK_LIBRARIES(${DRIVER_NAME_STATIC} "${AWS_ODBC_FAILOVER_DIR}/build/Release/aws-odbc-failover-export.lib")
 
 
 ENDWHILE(${DRIVER_INDEX} LESS ${DRIVERS_COUNT})
