@@ -185,7 +185,6 @@ if(use_gtk)
     # TODO - Test Exported Failover	?? Needed?
     TARGET_INCLUDE_DIRECTORIES(${${gtk}_target} PRIVATE "${AWS_ODBC_FAILOVER_DIR}")
     TARGET_LINK_LIBRARIES(${${gtk}_target} "${AWS_ODBC_FAILOVER_DIR}/build/Release/aws-odbc-failover-export.lib")
-
   endforeach(gtk)
 
   if(NOT TARGET ${GTK2_target} AND NOT TARGET ${GTK3_target})
